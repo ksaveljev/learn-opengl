@@ -1,6 +1,6 @@
 import System.Exit (exitFailure, exitSuccess)
 import Control.Monad (unless, when)
-import Graphics.Rendering.OpenGL.Raw (glViewport)
+import Graphics.Rendering.OpenGL.Raw (glViewport, glClear, glClearColor, gl_COLOR_BUFFER_BIT)
 import qualified Graphics.UI.GLFW as GLFW
 
 mainLoop :: GLFW.Window -> IO ()
@@ -8,6 +8,10 @@ mainLoop window = do
     closeFlag <- GLFW.windowShouldClose window
     unless closeFlag $ do
       GLFW.pollEvents
+
+      glClearColor 0.2 0.3 0.3 1.0
+      glClear gl_COLOR_BUFFER_BIT
+
       GLFW.swapBuffers window
       mainLoop window
 
