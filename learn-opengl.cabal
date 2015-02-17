@@ -32,3 +32,13 @@ executable hello-triangle
                      , GLUtil
   hs-source-dirs:      02.hello.triangle
   default-language:    Haskell2010
+
+executable hello-square
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.8
+                     , GLFW-b
+                     , OpenGL
+                     , OpenGLRaw
+                     , GLUtil
+  hs-source-dirs:      02.hello.square
+  default-language:    Haskell2010
