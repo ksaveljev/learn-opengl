@@ -1,5 +1,5 @@
 import System.Exit (exitFailure, exitSuccess)
-import Control.Monad (unless)
+import Control.Monad (unless, when)
 import Graphics.Rendering.OpenGL.Raw (glViewport)
 import qualified Graphics.UI.GLFW as GLFW
 
@@ -10,6 +10,10 @@ mainLoop window = do
       GLFW.pollEvents
       GLFW.swapBuffers window
       mainLoop window
+
+keyCallback :: GLFW.KeyCallback
+keyCallback window key _ action _ =
+    when (key == GLFW.Key'Escape && action == GLFW.KeyState'Pressed) $ GLFW.setWindowShouldClose window True
 
 main :: IO ()
 main = do
@@ -26,5 +30,6 @@ main = do
       Nothing -> GLFW.terminate >> exitFailure
       Just window -> do
         GLFW.makeContextCurrent mw
+        GLFW.setKeyCallback window (Just keyCallback)
         glViewport 0 0 800 600
         mainLoop window >> GLFW.terminate >> exitSuccess
