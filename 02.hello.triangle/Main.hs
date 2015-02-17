@@ -58,5 +58,6 @@ main = do
           bindBuffer ArrayBuffer $= Just vbo
           vertexAttribPointer posn $= (ToFloat, vad)
           vertexAttribArray posn $= Enabled
+          bindBuffer ArrayBuffer $= Nothing
 
         mainLoop window shaderProgram vao >> GLFW.terminate >> exitSuccess
