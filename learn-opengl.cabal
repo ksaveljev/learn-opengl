@@ -52,3 +52,13 @@ executable uniforms
                      , GLUtil
   hs-source-dirs:      03.uniforms
   default-language:    Haskell2010
+
+executable colors
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.8
+                     , GLFW-b
+                     , OpenGL
+                     , OpenGLRaw
+                     , GLUtil
+  hs-source-dirs:      03.colors
+  default-language:    Haskell2010
