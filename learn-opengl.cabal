@@ -63,12 +63,12 @@ executable colors
   hs-source-dirs:      03.colors
   default-language:    Haskell2010
 
-executable apply-texture
+executable texture
   main-is:             Main.hs
   build-depends:       base >=4.7 && <4.8
                      , GLFW-b
                      , OpenGL
                      , OpenGLRaw
                      , GLUtil
-  hs-source-dirs:      04.apply.texture
+  hs-source-dirs:      04.texture
   default-language:    Haskell2010

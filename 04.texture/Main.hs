@@ -58,7 +58,7 @@ main = do
 
         vbo <- makeBuffer ArrayBuffer vertices
         ebo <- makeBuffer ElementArrayBuffer indices
-        shaderProgram <- simpleShaderProgram "04.apply.texture/simple.vs" "04.apply.texture/simple.fs"
+        shaderProgram <- simpleShaderProgram "04.texture/simple.vs" "04.texture/simple.fs"
 
         vao <- makeVAO $ do
           let posn = getAttrib shaderProgram "position"
@@ -79,7 +79,7 @@ main = do
           bindBuffer ArrayBuffer $= Nothing
 
         -- load and create texture
-        Right containerTexture <- readTexture "04.apply.texture/container.jpg"
+        Right containerTexture <- readTexture "04.texture/container.jpg"
         textureFilter   Texture2D   $= ((Linear', Nothing), Linear')
         textureWrapMode Texture2D S $= (Repeated, Repeat)
         textureWrapMode Texture2D T $= (Repeated, Repeat)
