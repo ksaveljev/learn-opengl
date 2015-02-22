@@ -41,7 +41,7 @@ mainLoop window shaderProgram vao containerTexture awesomefaceTexture = do
 
       Just glfwTime <- GLFW.getTime
       let translation = L.mkTransformationMat L.eye3 $ L.V3 0.5 (-0.5) (0::GLfloat)
-          angle = realToFrac $ glfwTime * pi / 4
+          angle = realToFrac $ 50.0 * glfwTime * pi / 180
           rotation :: L.M44 GLfloat = L.m33_to_m44 . L.fromQuaternion $ L.axisAngle (L.V3 0 0 1) angle
           transform = translation L.!*! rotation
           
