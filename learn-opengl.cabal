@@ -82,3 +82,14 @@ executable texture-units
                      , GLUtil
   hs-source-dirs:      04.texture.units
   default-language:    Haskell2010
+
+executable transformations
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.8
+                     , GLFW-b
+                     , OpenGL
+                     , OpenGLRaw
+                     , GLUtil
+                     , linear
+  hs-source-dirs:      05.transformations
+  default-language:    Haskell2010
