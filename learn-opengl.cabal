@@ -104,3 +104,14 @@ executable going-3d
                      , linear
   hs-source-dirs:      06.going.3d
   default-language:    Haskell2010
+
+executable more-3d
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.8
+                     , GLFW-b
+                     , OpenGL
+                     , OpenGLRaw
+                     , GLUtil
+                     , linear
+  hs-source-dirs:      06.more.3d
+  default-language:    Haskell2010
